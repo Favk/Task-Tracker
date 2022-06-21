@@ -1,4 +1,4 @@
-# Angular Crash (Task Tracker App)
+# Task Tracker App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 It includes Angular ui and the mock backend used is JSON-server
