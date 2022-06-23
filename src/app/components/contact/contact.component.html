@@ -8,23 +8,22 @@
 
 <section class="section">
     <div class="container">
-        {{ name }}
         <!--Contact form-->
-        <form action="submit" (ngSubmit)="submitForm()">
+        <form (ngSubmit)="submitForm()">
             <!--name-->
             <div class="field">
                 <label for="label">Name</label>
-                <input type="text" name="name" class="input" [ngModel]="name">
+                <input type="text" name="name" class="input" [(ngModel)]="name">
             </div>
             <!--email-->
             <div class="field">
                 <label for="label">Email</label>
-                <input type="text" name="Email" class="input" [ngModel]="email">
+                <input type="text" name="Email" class="input" [(ngModel)]="email">
             </div>
             <!--Reminder-->
             <div class="field">
                 <label for="label">Reminder</label>
-                <textarea name="reminder" id="reminder" cols="50" rows="10" [ngModel]="reminder"></textarea>
+                <textarea name="reminder" id="reminder" cols="50" rows="10" [(ngModel)]="reminder"></textarea>
             </div>
             <!--submit button-->
             <button type="submit" class="button is-large is-warning">

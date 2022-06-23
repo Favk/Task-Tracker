@@ -17,7 +17,7 @@ export class ContactComponent implements OnInit {
   }
 
   submitForm(){
-    const message = `My name is {this.name}`;
+    const message = `My name is ${this.name}. My email is ${this.email}. My reminder is ${this.reminder}`;
     alert(message)
   }
 }
