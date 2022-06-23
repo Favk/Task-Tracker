@@ -9,16 +9,18 @@
 <section class="section">
     <div class="container">
         <!--Contact form-->
-        <form (ngSubmit)="submitForm()">
+        <form (ngSubmit)="submitForm()" #contactForm="ngForm">
             <!--name-->
             <div class="field">
                 <label for="label">Name</label>
-                <input type="text" name="name" class="input" [(ngModel)]="name">
+                <input type="text" name="name" class="input" [(ngModel)]="name" #nameInput="ngModel" required="name">
+                <div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">Your name is required</div>
             </div>
             <!--email-->
             <div class="field">
                 <label for="label">Email</label>
-                <input type="text" name="Email" class="input" [(ngModel)]="email">
+                <input type="text" name="Email" class="input" [(ngModel)]="email" #emailInput="ngModel" required="email">
+                <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">Your email is required and needs to be a valid email</div>
             </div>
             <!--Reminder-->
             <div class="field">
@@ -26,7 +28,7 @@
                 <textarea name="reminder" id="reminder" cols="50" rows="10" [(ngModel)]="reminder"></textarea>
             </div>
             <!--submit button-->
-            <button type="submit" class="button is-large is-warning">Send</button>
+            <button type="submit" class="button is-large is-warning" [disabled]="contactForm.invalid">Send</button>
         </form>
     </div>
 </section>

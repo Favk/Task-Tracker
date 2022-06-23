@@ -17,7 +17,8 @@ import { ContactComponent } from './components/contact/contact.component';
 
 const appRoutes: Routes = [
   {path: '', component: TasksComponent},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent},
+  {path: 'send reminders', component: ContactComponent}
 ];
 
 @NgModule({
