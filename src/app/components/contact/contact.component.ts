@@ -1,4 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import '../../../assets/smtp.js';
+
+declare let Email: any;
 
 @Component({
   selector: 'app-contact',

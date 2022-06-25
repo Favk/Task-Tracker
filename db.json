@@ -23,6 +23,12 @@
       "day": "May 12th at 9:04pm",
       "reminder": false,
       "id": 4
+    },
+    {
+      "text": "James",
+      "day": "June 25th at 6;00pm",
+      "reminder": false,
+      "id": 5
     }
   ]
 }
