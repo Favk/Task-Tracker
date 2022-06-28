@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import "../../../assets/smtp.js";
-import { NgForm } from '@angular/forms';
+import { NgForm } from "@angular/forms";
+import { EmailService } from "../../services/email.service";
 
 declare let Email: any;
 
@@ -14,21 +15,17 @@ export class ContactComponent implements OnInit {
   email!: string;
   reminder!: string;
 
-  
-  constructor() { }
+  constructor(private Email: EmailService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(f : NgForm){
-    Email.send({
-      Host: 'smtp.elastic email.com',
-      Username: 'favourkolade8@gmail.com',
-      Password: '7E2CC687BD8BA99149EFDE28AC14E07883F8',
-      To: 'favourkolade8@gmail.com',
-      From: `favourkolade8@gmail.com`,
+  onSubmit(f: NgForm) {
+    this.Email.send({
+      To: `${this.email}`,
       Body: `<b>Name: </b>${this.name} <br /> <b>Email: </b>${this.email}<br/> 
               <b>Reminder:</b> <br /> ${this.reminder} <br><br> <b>~End of Message.~</b>`
-    }).then( (reminder: any) => {alert(reminder); } );
+    }).subscribe((reminder: any) => { alert(reminder); });
   }
+
 }

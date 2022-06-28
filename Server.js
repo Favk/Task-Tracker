@@ -3,12 +3,13 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+require('dotenv').config();
 
 // create a new Express application instance
 const app = express();
 
 //configure the Express middleware to accept CORS requests and parse request body into JSON
-app.use(cors({origin: "*" }));
+app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
 //start application server on port 3000
@@ -33,22 +34,23 @@ app.post("/sendmail", (req, res) => {
 });
 
 const sendMail = (user, callback) => {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: "<sender email>",
-        pass: "<password>"
-      }
-    });
-  }
+  
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    secure: false,
+    auth: {
+      user: process.env.MAIL_EMAIL,
+      pass: process.env.MAIL_PASSWORD
+    }
+  });
+
 
   const mailOptions = {
-    from: `"<Sender’s name>", "<Sender’s email>"`,
-    to: `<${user.email}>`,
+    from: process.env.MAIL_PASSWORD,
+    to: user.To,
     subject: "<Message subject>",
-    html: "<h1>And here is the place for HTML</h1>"
+    html: user.Body
   };
-  
+
   transporter.sendMail(mailOptions, callback);
+}
