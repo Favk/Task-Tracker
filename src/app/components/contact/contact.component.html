@@ -9,7 +9,7 @@
 <section class="section">
     <div class="container">
         <!--Contact form-->
-        <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" >
             <!--name-->
             <div class="field">
                 <label for="label">Name</label>
