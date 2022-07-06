@@ -53,4 +53,6 @@ const sendMail = (user, callback) => {
   };
 
   transporter.sendMail(mailOptions, callback);
+
 }
+

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import "../../../assets/smtp.js";
-import { NgForm } from "@angular/forms";
-import { EmailService } from "../../services/email.service";
+import { NgForm } from '@angular/forms';
+import { EmailService } from '../../services/email.service';
+
 
 declare let Email: any;
 

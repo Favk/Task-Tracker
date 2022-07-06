@@ -7,11 +7,11 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class EmailService {
   
   mailserver = "http://localhost:3000/sendmail";
-
+  
   constructor(private http:HttpClient) { }
 
-  send(mailBody: any){
-    return this.http.post(this.mailserver, mailBody)
+  send(mailBody: any) {
+    return this.http.post(this.mailserver, mailBody);
   }
 }
 
