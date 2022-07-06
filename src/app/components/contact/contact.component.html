@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <form action="https://formspree.io/f/mayvzagr" method="POST">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
             <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstName" name="firstName">
