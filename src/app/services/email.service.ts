@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
   providedIn: 'root'
 })
 export class EmailService {
+  
   mailserver = "http://localhost:3000/sendmail";
 
   constructor(private http:HttpClient) { }
