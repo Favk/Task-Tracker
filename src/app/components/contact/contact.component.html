@@ -1,34 +1,26 @@
-<section class="Contact form">
-    <div class="tasks">
-        <div class="box">
-            <h1 class="title">Send your reminders</h1>
-        </div>
-    </div>
-</section>
-
-<section class="section">
+<section>
     <div class="container">
-        <!--Contact form-->
-        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" >
-            <!--name-->
-            <div class="field">
-                <label for="label">Name</label>
-                <input type="text" name="name" class="input" [(ngModel)]="name" #nameInput="ngModel" required="name">
-                <div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">Your name is required</div>
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName">
             </div>
-            <!--email-->
-            <div class="field">
-                <label for="label">Email</label>
-                <input type="email" name="Email" class="input" [(ngModel)]="email" #emailInput="ngModel" required="email">
-                <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">Your email is required and needs to be a valid email</div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName">
             </div>
-            <!--Reminder-->
-            <div class="field">
-                <label for="label">Reminder</label>
-                <textarea name="reminder" id="reminder" cols="50" rows="10" [(ngModel)]="reminder" required="Reminder"></textarea>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
             </div>
-            <!--submit button-->
-            <button type="submit" class="button is-large is-warning" [disabled]="contactForm.invalid">Send</button>
+            <div class="form-group">
+                <label for="reminder">Reminder</label>
+                <textarea name="reminder" id="reminder" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit">Send</button>
         </form>
     </div>
+    <div id="status"></div>
 </section>

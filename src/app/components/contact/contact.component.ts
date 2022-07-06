@@ -3,6 +3,7 @@ import "../../../assets/smtp.js";
 import { NgForm } from '@angular/forms';
 import { EmailService } from '../../services/email.service';
 
+
 declare let Email: any;
 
 @Component({
@@ -14,7 +15,6 @@ export class ContactComponent implements OnInit {
   name!: string;
   email!: string;
   reminder!: string;
-
 
   constructor(private Email: EmailService) { }
 
@@ -28,4 +28,5 @@ export class ContactComponent implements OnInit {
               <b>Reminder:</b> <br /> ${this.reminder} <br><br> <b>~End of Message.~</b>`
     }).subscribe((reminder: any) => { alert(reminder); });
   }
+
 }
